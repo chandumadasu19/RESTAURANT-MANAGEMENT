@@ -2,118 +2,166 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
-        margin: 0;
-        padding: 0 10px;
-    }
+<head>  
+<style type="text/css">
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+   
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
 
-    h3 {
-        text-align: center;
-        margin-top: 20px;
-    }
+/* ===== BODY ===== */
+body {
+    background: url("images/loginback.webp") center/cover no-repeat fixed;
+    padding: 20px;
+    margin-left: 200px;
+    color: #111827;
+    width: 60%;
+}
 
-    hr {
-        margin: 20px 0;
-    }
+/* ===== PAGE TITLE ===== */
+h3 {
+    text-align: center;
+    margin: 20px 0;
+    font-weight: 600;
+}
 
-    /* NAVBAR */
-    #nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #222;
-        padding: 10px 20px;
-        border-radius: 5px;
-    }
+h3[style*="gold"] {
+    font-size: 24px;
+}
 
-    #nav h2 {
-        margin: 0;
-        color: lime;
-    }
+/* ===== NAVBAR ===== */
+#nav {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 14px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+     background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(0px);
+}
 
-    #nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-    }
+#restname h2 {
+    color: #dc2626;
+    font-style: italic;
+}
 
-    #nav ul li {
-        margin-left: 15px;
-    }
+#nav ul {
+    list-style: none;
+    display: flex;
+    gap: 14px;
+}
 
-    #nav ul li a {
-        text-decoration: none;
-        color: white;
-        font-weight: bold;
-    }
+#nav ul li a {
+    text-decoration: none;
+    color: #374151;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+}
 
-    #nav ul li a:hover {
-        color: gold;
-    }
+#nav ul li a:hover {
+    background: #f3f4f6;
+}
 
-    /* RESTAURANT LIST */
-    ul {
-        padding: 0;
-    }
+/* ===== DIVIDER ===== */
+hr {
+    border: none;
+    height: 1px;
+    background: #e5e7eb;
+    margin: 30px 0;
+}
 
-    ul li {
-        list-style: none;
-        margin: 10px 0;
-        padding: 10px;
-        background-color: white;
-        border-radius: 5px;
-    }
+/* ===== SECTIONS ===== */
+#orders, #history, #profile {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+     background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(0px);
+}
 
-    ul li:hover {
-        background-color: #e9f5ff;
-    }
+/* ===== RESTAURANT LIST ===== */
+ul {
+    list-style: none;
+    margin-top: 18px;
+}
 
-    /* TABLES */
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        background-color: white;
-        margin-top: 10px;
-    }
+ul li {
+    background: #ffffff;
+    padding: 14px 18px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
 
-    table th {
-        background-color: #007bff;
-        color: white;
-        padding: 8px;
-    }
+ul li:hover {
+    background: #f9fafb;
+}
 
-    table td {
-        padding: 8px;
-        text-align: center;
-        border-bottom: 1px solid #ddd;
-    }
+ul li[style*="gray"] {
+    background: #f3f4f6;
+    color: #9ca3af;
+}
 
-    /* PROFILE SECTION */
-    #profile {
-        background-color: white;
-        padding: 15px;
-        border-radius: 5px;
-        margin-top: 10px;
-    }
+/* ===== TABLE ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 14px;
+}
 
-    #profile button {
-        margin-top: 10px;
-        padding: 8px 15px;
-        background-color: #28a745;
-        border: none;
-        color: white;
-        border-radius: 4px;
-        cursor: pointer;
-    }
+th {
+    background: #f9fafb;
+    padding: 10px;
+    font-size: 13px;
+    text-align: left;
+}
 
-    #profile button:hover {
-        background-color: #1e7e34;
-    }
+td {
+    padding: 10px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 13px;
+}
+
+/* ===== BUTTON ===== */
+button {
+    margin-top: 16px;
+    padding: 10px;
+    width: 100%;
+    background: #dc2626;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #b91c1c;
+}
+
+/* ===== ERROR ===== */
+h3[style*="red"] {
+    color: #dc2626 !important;
+}
+ul li {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    padding: 14px 18px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.4);
+    margin-bottom: 10px;
+}
+
 </style>
 
 <meta charset="UTF-8">
@@ -136,11 +184,12 @@ if(msg!=null){
 <div id="restname" style="font-style: italic; color:lime;"><h2><%=cm.getUsername() %></h2></div>
 <divid="nav-btn">
 <ul style="color:black">
-<li><a href=#items>HOME</a></li>
-<li><a href="#orderslist">ORDERS</a></li>
-<li><a href="#history">HISTORY</a></li>
-<li><a href="#profile">PROFILE</a></li>
-<li><a href="Customlogout">LOGOUT</a></li>
+<li><a href="#items"><i class="fa-solid fa-house"></i> Home</a></li>
+<li><a href="#orderslist"><i class="fa-solid fa-bag-shopping"></i> Orders</a></li>
+<li><a href="#history"><i class="fa-solid fa-clock-rotate-left"></i> History</a></li>
+<li><a href="#profile"><i class="fa-solid fa-user"></i> Profile</a></li>
+<li><a href="Customlogout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+
 </ul>
 </div>
 </div>

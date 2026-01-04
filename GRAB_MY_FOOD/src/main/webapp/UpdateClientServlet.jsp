@@ -9,9 +9,9 @@
 <style>
     body {
         font-family: Arial, sans-serif;
-        background-color: #f4f6f8;
-        margin: 0;
-        padding: 20px;
+ background: url("images/loginback.webp") center/cover no-repeat fixed;
+    padding: 20px;
+    color: #111827;
     }
 
     h3 {
@@ -27,6 +27,8 @@
         background-color: #ffffff;
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0,0,0,0.15);
+         backdrop-filter: blur(0px);
+     background: rgba(255, 255, 255, 0.65);
     }
 
     form input {
@@ -60,6 +62,7 @@
 Clientmodel cm=(Clientmodel) session.getAttribute("client");
 Integer id=Integer.parseInt(request.getParameter("id"));
 %>
+<h3 style=" color:gold">  GRAB MY FOOD </h3><hr>
 <h3>Client Updatesion page</h3>
 <form action="Updateclient" method="post">
 <input type="hidden" id="id" name="id" value="<%=id%>">

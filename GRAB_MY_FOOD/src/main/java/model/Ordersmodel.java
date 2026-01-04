@@ -4,6 +4,15 @@ public class Ordersmodel {
 	private int id;
 	private int qty;
 	private int price;
+	public Ordersmodel(int qty, int price, int itemid, int clientid, int customerid, String Status) {
+		super();
+		this.qty = qty;
+		this.price = price;
+		this.itemid = itemid;
+		this.clientid = clientid;
+		this.customerid = customerid;
+		this.Status= Status;
+	}
 	public int getQty() {
 		return qty;
 	}

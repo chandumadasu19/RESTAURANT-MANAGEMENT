@@ -7,9 +7,11 @@
     body {
         font-family: Arial, sans-serif;
         background-color: #f4f6f8;
-        margin: 0;
-        padding: 20px;
-    }
+       background: url("images/loginback.webp") center/cover no-repeat fixed;
+    padding: 20px;
+    color: #111827;
+         
+    }  
 
     h3 {
         text-align: center;
@@ -24,6 +26,9 @@
         background-color: white;
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0,0,0,0.15);
+     
+           backdrop-filter: blur(0px);
+     background: rgba(255, 255, 255, 0.65);
     }
 
     form input {
@@ -33,6 +38,8 @@
         border: 1px solid #ccc;
         border-radius: 4px;
         box-sizing: border-box;
+         
+        
     }
 
     form button {
@@ -60,7 +67,8 @@
 Clientmodel cm=(Clientmodel) session.getAttribute("client");
 Integer id=Integer.parseInt(request.getParameter("id"));
 %>
-<h3>UPDADING ITEM DETAILS:</h3>
+<h3 style=" color:gold">  GRAB MY FOOD </h3><hr>
+<h3 style=" color:white;" >UPDADING ITEM DETAILS:</h3>
 <form Action="updateitem" method="post">
 <input type="hidden" name="id" value="<%= id%>">
 ITEAM NAME : <input type="text" id="iname" name="iname">

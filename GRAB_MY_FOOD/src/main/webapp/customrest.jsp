@@ -11,6 +11,9 @@
         background-color: #f4f6f8;
         margin: 0;
         padding: 15px;
+        background: url("images/loginback.webp") center/cover no-repeat fixed;
+    padding: 20px;
+    color: #111827;
     }
 
     h3 {
@@ -38,6 +41,8 @@
         background-color: white;
         border-radius: 8px;
         box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        backdrop-filter: blur(0px);
+     background: rgba(255, 255, 255, 0.65);
     }
 
     ul li h5 {
@@ -72,6 +77,8 @@
         background-color: white;
         border-radius: 8px;
         box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        backdrop-filter: blur(0px);
+     background: rgba(255, 255, 255, 0.65);
     }
 
     #cart table {
@@ -134,14 +141,12 @@ if(ilist.size()>0){
     <h5>ITEM NAME: <%=i.getIname() %></h5>
     <h5>ITEM PRICE: <%=i.getIprice() %></h5>
     <h5>DESCRIPTION: <%=i.getDes() %></h5>
-     <input type="number" id="qty_<%=i.getId()%>" value="1" min="1">
-     <button 
-        type="button"
-        onclick="addToCart('<%=i.getId()%>',
-                           '<%=i.getIname()%>',
-                           <%=i.getIprice()%>)">
+    <form action="orderitemservlet?iid=<%=i.getId()%>&cuid=<%=cm.getId()%>&rid=<%=rid%>&iprice=<%=i.getIprice()%>">
+     <input type="number" id="qty_<%=i.getId()%>" value="1" min="1" name="qty">
+     <button type="submit">
         ADD
     </button>
+    </form>
 </li>
 <%} %>
 </ul>

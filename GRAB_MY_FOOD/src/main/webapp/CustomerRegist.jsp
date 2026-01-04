@@ -7,6 +7,9 @@
     body {
         font-family: Arial, sans-serif;
         background-color: #f4f6f8;
+        background: url("images/loginback.webp") center/cover no-repeat fixed;
+    padding: 20px;
+    color: #111827;
     }
 
     #RegistForm {
@@ -16,6 +19,8 @@
         background-color: #ffffff;
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(0px);
+     background: rgba(255, 255, 255, 0.65);
     }
 
     #RegistForm h3 {
@@ -61,6 +66,7 @@ if(msg!=null){
 	 <%
 }
 %>
+<h3 style=" color:gold">  GRAB MY FOOD </h3>
 <div id="RegistForm">
 <h3>Customer Registration</h3>
 <form action="CustomerRegistServlet" method="post">

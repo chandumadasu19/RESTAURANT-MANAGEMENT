@@ -11,13 +11,13 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    
     font-family: "Segoe UI", Arial, sans-serif;
 }
 
 /* BODY BACKGROUND */
 body {
-    background: url("images/restback.avif") center/cover no-repeat fixed;
+    background: url("images/loginback.webp") center/cover no-repeat fixed;
 }
 
 /* PAGE WRAPPER (WHITE GLASS LAYER) */
@@ -219,6 +219,7 @@ if(msg!=null){
 }
 %>
 <h3 style=" color:gold">  GRAB MY FOOD </h3>
+
 <hr>
 
 <div id="nav">
