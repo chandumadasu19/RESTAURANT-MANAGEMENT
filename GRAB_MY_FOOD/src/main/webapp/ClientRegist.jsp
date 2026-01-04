@@ -60,6 +60,7 @@
 </head>
 <body>
 <% String msg= (String) request.getAttribute("msg");
+
 if(msg!=null){
 	 %>
 	 <script > window.alert(" <%= msg%>  "); </script>

@@ -56,7 +56,8 @@
 </style>
 
 <meta charset="UTF-8">
-<title>Insert title here</title>
+
+<title>GRAB MY FOOD</title>
 </head>
 <body>
 <% String msg= (String) request.getAttribute("msg");

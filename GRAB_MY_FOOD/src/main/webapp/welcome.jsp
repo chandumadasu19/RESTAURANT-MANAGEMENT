@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<title>Insert title here</title>
+<title>GRAB MY FOOD</title>
 </head>
 <style>
    /* RESET */

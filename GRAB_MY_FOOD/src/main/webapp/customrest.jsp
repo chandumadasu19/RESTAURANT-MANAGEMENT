@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>GRAB MY FOOD</title>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -68,6 +68,7 @@
 
     ul li button:hover {
         background-color: #0056b3;
+        
     }
 
     /* CART SECTION */
