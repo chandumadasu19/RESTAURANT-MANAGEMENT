@@ -302,20 +302,24 @@ STATUS  : <%=cm.getStatus() %>
 <% List<Ordersmodel> olist = dao.clientorders(cm.getId());
  if(olist.size()>0){
 %>
-<table>
+<table >
 <tr>
 <th>OEDER ID</th>
 <th>ITEM ID</th>
 <th>CUSTOMER ID</th>
 <th>STATUS</th>
+<th>UPDATE</th>
 </tr>
 <%for(Ordersmodel i : olist){ %>
 
-<tr>
+<tr style="color:black">
 <td><%=i.getId() %></td>
 <td><%=i.getItemid() %></td>
 <td><%=i.getCustomerid() %></td>
 <td><%=i.getStatus() %></td>
+<td><form action="done?id=<%=i.getId()%>" method="post">
+<button type="submit">DONE</button>
+</form></td>
 </tr>
 <%} %>
 
@@ -330,7 +334,7 @@ STATUS  : <%=cm.getStatus() %>
 <div id="history">
 <h3>HISTORY LIST</h3>
 <% List<Ordersmodel> hlist = dao.clienthist(cm.getId());
- if(olist.size()>0){
+ if(hlist.size()>0){
 %>
 <table>
 <tr>
@@ -339,9 +343,9 @@ STATUS  : <%=cm.getStatus() %>
 <th>CUSTOMER ID</th>
 <th>STATUS</th>
 </tr>
-<%for(Ordersmodel i : olist){ %>
+<%for(Ordersmodel i : hlist){ %>
 
-<tr>
+<tr style="color:black">
 <td><%=i.getId() %></td>
 <td><%=i.getItemid() %></td>
 <td><%=i.getCustomerid() %></td>

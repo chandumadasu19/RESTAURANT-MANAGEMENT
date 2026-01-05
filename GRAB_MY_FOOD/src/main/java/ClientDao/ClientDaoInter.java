@@ -20,6 +20,7 @@ public interface ClientDaoInter {
 	List<Ordersmodel> clientorders(int restid);
 	List<Ordersmodel> clienthist(int restid);
 	boolean Clientstatus(int id, String Sts);
+	boolean doneitem(int id);
 	
 	
 	

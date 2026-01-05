@@ -218,7 +218,7 @@ public class ClientDaoclass implements ClientDaoInter {
 					ps.setString(2,"preparing..");
 		    ResultSet rs = ps.executeQuery();
 		    while(rs.next()) {
-		    	olist.add( new Ordersmodel(rs.getInt(1),rs.getInt(2),rs.getInt(3),rs.getInt(4),rs.getString(5)));
+		    	olist.add( new Ordersmodel(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getInt(4), rs.getInt(5), rs.getInt(6), rs.getString(7)));
 		    }
 		
 		rs.close();
@@ -241,7 +241,7 @@ public class ClientDaoclass implements ClientDaoInter {
 					ps.setString(2,"done");
 		    ResultSet rs = ps.executeQuery();
 		    while(rs.next()) {
-		    	olist.add( new Ordersmodel(rs.getInt(1),rs.getInt(2),rs.getInt(3),rs.getInt(4),rs.getString(5)));
+		    	olist.add( new Ordersmodel(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getInt(4), rs.getInt(5), rs.getInt(6), rs.getString(7)));
 		    }
 		
 		rs.close();
@@ -279,4 +279,25 @@ public class ClientDaoclass implements ClientDaoInter {
 			
 	
 }
+
+	@Override
+	public boolean doneitem(int id) {
+		boolean status=false;
+		try {
+			Connection con = DBUtil.getconn();
+			PreparedStatement ps = con.prepareStatement(
+				    "UPDATE orders SET Status=? WHERE id=?"
+				);
+
+			ps.setString(1,"done");
+			ps.setInt(2,id);
+			int r = ps.executeUpdate();
+			if(r>0) {
+				status=true;
+			}
+	}catch (Exception e) {
+         e.printStackTrace();
+	}
+		return status;
+	}
 }

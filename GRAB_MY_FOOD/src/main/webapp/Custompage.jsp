@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style type="text/css">
 /* ===== RESET ===== */
 * {
@@ -15,17 +16,18 @@
 /* ===== BODY ===== */
 body {
     background: url("images/loginback.webp") center/cover no-repeat fixed;
-    padding: 20px;
-    margin-left: 200px;
+    padding: 200px;
+   
     color: #111827;
-    width: 60%;
+    
 }
 
 /* ===== PAGE TITLE ===== */
 h3 {
-    text-align: center;
-    margin: 20px 0;
-    font-weight: 600;
+     text-align: center;
+    margin: 25px 0;
+    color: #e74c3c;
+    letter-spacing: 1px;
 }
 
 h3[style*="gold"] {
@@ -91,6 +93,7 @@ hr {
 ul {
     list-style: none;
     margin-top: 18px;
+      text-decoration: none;
 }
 
 ul li {
@@ -100,6 +103,7 @@ ul li {
     border: 1px solid #e5e7eb;
     margin-bottom: 10px;
     font-size: 14px;
+  
 }
 
 ul li:hover {
@@ -119,7 +123,7 @@ table {
 }
 
 th {
-    background: #f9fafb;
+    background: #e74c3c;
     padding: 10px;
     font-size: 13px;
     text-align: left;
@@ -129,6 +133,7 @@ td {
     padding: 10px;
     border-top: 1px solid #e5e7eb;
     font-size: 13px;
+    text-align: center;
 }
 
 /* ===== BUTTON ===== */
@@ -203,9 +208,11 @@ if(rlist.size()>0){%>
 if(i.getStatus().equalsIgnoreCase("active")){
 %>
 <a href="customrest.jsp?restid=<%=i.getId()%>&rname=<%=i.getRestname()%>"><li style="border:1px solid;">
+<h3>
 RESTAURANT NAME: <%=i.getRestname() %>
 ADDRESS        : <%=i.getAddress() %>
 Status         : <%= i.getStatus() %>
+</h3>
  </li>
  </a>
  <%}else{ %>
@@ -215,7 +222,7 @@ RESTAURANT NAME: <%=i.getRestname() %>
 ADDRESS        : <%=i.getAddress() %>
 Status         : <%= i.getStatus() %>
  </li>
- </a>S
+ </a>
  <%} } %>
 </ul>
 
@@ -223,8 +230,8 @@ Status         : <%= i.getStatus() %>
 <h3 style="color:red">NO RESTARUNTS</h3>
 <%} %>
 <hr>
-<div id="orders">
 <h3>RUNNING ORDERS</h3>
+<div id="orders">
 <% List<Ordersmodel> olist=dao.getolist(cm.getId()); 
 if(olist.size()>0){%>
 <table>
@@ -237,7 +244,7 @@ if(olist.size()>0){%>
 </tr>
 <%for(Ordersmodel i : olist){ %>
 
-<tr>
+<tr style="color:black;letter-spacing: 1px;">
 <td><%=i.getId() %></td>
 <td><%=i.getQty() %></td>
 <td><%=i.getPrice() %></td>
@@ -254,10 +261,10 @@ if(olist.size()>0){%>
 <%} %>
 </div>
 <hr>
-<div id="history">
 <h3>HISTORY OF MY ORDERS</h3>
+<div id="history">
 <% List<Ordersmodel> hlist = dao.customhist(cm.getId());
- if(olist.size()>0){
+ if(hlist.size()>0){
 %>
 <table>
 <tr>
@@ -267,9 +274,9 @@ if(olist.size()>0){%>
 <th>ITEM ID</th>
 <th>CLIENT ID</th>
 </tr>
-<%for(Ordersmodel i : olist){ %>
+<%for(Ordersmodel i : hlist){ %>
 
-<tr>
+<tr style="color:black;letter-spacing: 1px;">
 <td><%=i.getId() %></td>
 <td><%=i.getQty() %></td>
 <td><%=i.getPrice() %></td>
@@ -282,7 +289,7 @@ if(olist.size()>0){%>
 <%
  } else{
 %>
-<h3 style="color:red">NO ORDERS</h3>
+<h3 style="color:red ">NO ORDERS</h3>
 <%} %>
 </div>
 <hr>

@@ -139,10 +139,11 @@ if(ilist.size()>0){
 <ul>
 <% for(Itemmodel i: ilist){ %>
 <li Style="border:1px solid black;">
+<%=i.getId()%>
     <h5>ITEM NAME: <%=i.getIname() %></h5>
     <h5>ITEM PRICE: <%=i.getIprice() %></h5>
     <h5>DESCRIPTION: <%=i.getDes() %></h5>
-    <form action="orderitemservlet?iid=<%=i.getId()%>&cuid=<%=cm.getId()%>&rid=<%=rid%>&iprice=<%=i.getIprice()%>">
+    <form action="orderitemservlet?iid=<%=i.getId()%>&cuid=<%=cm.getId()%>&rid=<%=rid%>&iprice=<%=i.getIprice()%>" method="post">
      <input type="number" id="qty_<%=i.getId()%>" value="1" min="1" name="qty">
      <button type="submit">
         ADD

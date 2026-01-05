@@ -18,6 +18,8 @@ public interface CustomDaoInter {
 	List<Ordersmodel> customhist(int cid);
 
 	boolean Updatecustom(Custommodel cm1);
+
+	boolean placeorder(Ordersmodel om);
 	
 	
 

@@ -111,7 +111,7 @@ public class CustomDaoClass implements CustomDaoInter{
 					ps.setString(2,"preparing..");
 		    ResultSet rs = ps.executeQuery();
 		    while(rs.next()) {
-		    	olist.add( new Ordersmodel(rs.getInt(1),rs.getInt(2),rs.getInt(3),rs.getInt(4),rs.getString(5)));
+		    	olist.add( new Ordersmodel(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getInt(4), rs.getInt(5)));
 		    }
 		
 		rs.close();
@@ -134,7 +134,7 @@ public class CustomDaoClass implements CustomDaoInter{
 					ps.setString(2,"done");
 		    ResultSet rs = ps.executeQuery();
 		    while(rs.next()) {
-		    	olist.add( new Ordersmodel(rs.getInt(1),rs.getInt(2),rs.getInt(3),rs.getInt(4),rs.getString(5)));
+		    	olist.add( new Ordersmodel(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getInt(4), rs.getInt(5)));
 		    }
 		
 		rs.close();
@@ -172,6 +172,29 @@ public class CustomDaoClass implements CustomDaoInter{
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
+		return status;
+	}
+
+	@Override
+	public boolean placeorder(Ordersmodel om) {
+		boolean status=false;
+		try {
+			Connection con = DBUtil.getconn();
+			PreparedStatement ps = con.prepareStatement("insert into orders(qty,price,itemid,clientid,customerid) values(?,?,?,?,?)");
+			ps.setInt(1,om.getQty());
+			ps.setInt(2,om.getPrice());
+			ps.setInt(3,om.getItemid());
+			ps.setInt(4,om.getClientid());
+			ps.setInt(5,om.getCustomerid());
+			int n=ps.executeUpdate();
+			if(n>0) {
+				status=true;
+			}
+			ps.close();
+			con.close();
+	}catch (Exception e) {
+       e.printStackTrace();
+	}
 		return status;
 	}
 

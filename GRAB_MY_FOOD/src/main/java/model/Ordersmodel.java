@@ -13,6 +13,16 @@ public class Ordersmodel {
 		this.customerid = customerid;
 		this.Status= Status;
 	}
+	public Ordersmodel(int id, int qty, int price, int itemid, int clientid, int customerid, String status) {
+		super();
+		this.id = id;
+		this.qty = qty;
+		this.price = price;
+		this.itemid = itemid;
+		this.clientid = clientid;
+		this.customerid = customerid;
+		Status = status;
+	}
 	public int getQty() {
 		return qty;
 	}
